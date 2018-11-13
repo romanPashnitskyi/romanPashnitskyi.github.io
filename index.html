@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player</title>
+  <link rel="stylesheet" href="src/index.css">
+</head>
+<body>
+<div id="player" class="player">
+  <div class="player-inner">
+    <div id="cover" class="cover">
+      <img id="poster" class="poster" src="src/images/Rompasso - Angetenar.jpg" alt="">
+    </div>
+    <div id="info" class="info">
+      <h1 id="title">Angetenar</h1>
+      <h2 id="author">Rompasso</h2>
+    </div>
+    <div id="buttons" class="buttons">
+      <button id="previousButton" class="previousButton" onclick="previousSong()" type="button">&lsaquo;</button>
+      <button id="pauseButton" class="pauseButton" onclick="pause()" type="button">&rtrif;</button>
+      <button id="nextButton" class="nextButton" onclick="nextSong()" type="button">&rsaquo;</button>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div id="controls" class="controls">
+    <div class="time-progress">
+      <div id="Time" class="time">0:00</div>
+      <input id="currentTime" class="currentTime" type="range" value="0" min="0" max="100" oninput="changeCurrentTime()">
+    </div>
+    <div class="down-volume-up">
+      <img id="down" class="down" src="src/images/icon/volume-down.png" alt="">
+      <input id="volume" class="volume" type="range" max="100" oninput="changeVolume()">
+      <img id="up" class="up" src="src/images/icon/volume-up.png" alt="">
+    </div>
+  </div>
+  <audio id="myAudio" autoplay loop>
+    <source id="mp3_src" src="src/media/Rompasso - Angetenar.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div id="playlist" class="playlist"></div>
+</div>
+<script src="src/main.js"></script>
+</body>
+</html>
